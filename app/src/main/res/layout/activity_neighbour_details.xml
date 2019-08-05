@@ -7,17 +7,27 @@
     android:background="#D2E2E2E2"
     tools:context=".NeighbourDetailsActivity">
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="28dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2"
+        app:srcCompat="@drawable/ic_star_border_white_24dp" />
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar2"
         android:layout_width="386dp"
         android:layout_height="265dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,7 +58,7 @@
         android:layout_width="396dp"
         android:layout_height="288dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="5dp"
         android:background="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar2">
@@ -83,18 +93,19 @@
             android:id="@+id/imageView3"
             android:layout_width="72dp"
             android:layout_height="58dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="131dp"
+            android:layout_below="@+id/imageView"
+            android:layout_marginTop="23dp"
             app:srcCompat="@android:drawable/stat_sys_vp_phone_call" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="219dp"
             android:layout_height="41dp"
+            android:layout_below="@+id/textView2"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="94dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="30dp"
             android:text="Saint Pierre su mont a 5km"
             android:textSize="18sp" />
 
@@ -102,10 +113,10 @@
             android:id="@+id/textView4"
             android:layout_width="219dp"
             android:layout_height="41dp"
+            android:layout_below="@+id/textView5"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="98dp"
-            android:layout_marginTop="227dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="40dp"
             android:text="www.facebook.fr/caroline"
             android:textSize="18sp" />
 
@@ -113,10 +124,10 @@
             android:id="@+id/textView5"
             android:layout_width="219dp"
             android:layout_height="41dp"
+            android:layout_below="@+id/textView3"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="94dp"
-            android:layout_marginTop="141dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="10dp"
             android:text="+33 6 86 57 90 14"
             android:textSize="18sp" />
 
@@ -154,16 +165,5 @@
             android:textColor="@android:color/black"
             android:textSize="24sp" />
     </RelativeLayout>
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
-        android:layout_marginEnd="24dp"
-        android:clickable="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_star_border_white_24dp" />
 
 </android.support.constraint.ConstraintLayout>
