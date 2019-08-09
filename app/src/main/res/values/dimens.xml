@@ -5,4 +5,11 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="appbar_padding_top">8dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+
+
+    <!-- CardView -->
+    <dimen name="height_min_big_card">125dp</dimen>
+    <dimen name="height_min_little_card">100dp</dimen>
+
+
 </resources>
