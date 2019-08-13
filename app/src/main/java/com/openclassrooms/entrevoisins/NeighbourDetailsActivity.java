@@ -21,8 +21,6 @@ import butterknife.ButterKnife;
 public class NeighbourDetailsActivity extends AppCompatActivity {
 
     // UI Components
-    @BindView(R.id.tabs)
-    TabLayout mTabLayout;
 
     @BindView(R.id.toolbar)
     public android.support.v7.widget.Toolbar mToolbar;
@@ -39,25 +37,19 @@ public class NeighbourDetailsActivity extends AppCompatActivity {
     @BindView(R.id.add_favorite_button_btn)
     public android.support.design.widget.FloatingActionButton mFavFab;
 
-    @BindView(R.id.container)
-    ViewPager mViewPager;
-
-    ListNeighbourPagerAdapter mPagerAdapter;
 
 
     private Neighbour mNeighbour;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_neighbour_details);
         ButterKnife.bind(this);
+        mNeighbour=getIntent().getParcelableExtra("neighbour");
 
-        setSupportActionBar(mToolbar);
-        mPagerAdapter = new ListNeighbourPagerAdapter(getSupportFragmentManager());
-        mViewPager.setAdapter(mPagerAdapter);
-        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
-        mTabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+//        setSupportActionBar(mToolbar);
 
 
 // **********Fill UI with detail neighbour info **********
