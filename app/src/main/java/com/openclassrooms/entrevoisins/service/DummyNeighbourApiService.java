@@ -10,6 +10,8 @@ import java.util.List;
 public class DummyNeighbourApiService implements  NeighbourApiService {
 
     private List<Neighbour> neighbours = DummyNeighbourGenerator.generateNeighbours();
+//    private List<Neighbour> favorites = DummyNeighbourGenerator.generateNeighbours();
+
 
 
     /**
@@ -19,6 +21,10 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
     public List<Neighbour> getNeighbours() {
         return neighbours;
     }
+
+//    public List<Neighbour> getFavorites() {
+//        return favorites;
+//    }
 
     /**
      * {@inheritDoc}
