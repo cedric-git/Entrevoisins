@@ -90,9 +90,12 @@ public class Neighbour implements Parcelable {
 
     public boolean isFavorite() { return isFavorite; }
 
-    public void setFavorite(boolean favorite) {
-        isFavorite = favorite;
-    }
+//    public void setFavorite(boolean favorite) {
+//        isFavorite = favorite;
+//    }
+public void setFavorite(boolean favorite) {
+    this.isFavorite = favorite;
+}
 
     //-----------------------------a completer ----------------------------------------//
     @Override
@@ -108,16 +111,7 @@ public class Neighbour implements Parcelable {
         return Objects.hash(id);
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
 
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-parcel.writeInt(id);
-parcel.writeString(name);
-    }
     public static final Parcelable.Creator<Neighbour> CREATOR = new Parcelable.Creator<Neighbour>() {
         public Neighbour createFromParcel(Parcel in) {
             return new Neighbour(in);
@@ -131,6 +125,17 @@ parcel.writeString(name);
     private Neighbour(Parcel in) {
         id = in.readInt();
         name = in.readString();
+        isFavorite = in.readByte() != 0;
+    }
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(id);
+        parcel.writeString(name);
+        parcel.writeByte((byte) (isFavorite ? 1 : 0));
+    }
 }

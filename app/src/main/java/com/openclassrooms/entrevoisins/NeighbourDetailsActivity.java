@@ -1,7 +1,6 @@
 package com.openclassrooms.entrevoisins;
 
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageButton;
@@ -9,12 +8,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import com.bumptech.glide.Glide;
 import com.openclassrooms.entrevoisins.di.DI;
 import com.openclassrooms.entrevoisins.model.Neighbour;
 import com.openclassrooms.entrevoisins.service.NeighbourApiService;
-import com.openclassrooms.entrevoisins.ui.neighbour_list.ListNeighbourPagerAdapter;
 
-
+import butterknife.BindDrawable;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -28,17 +27,25 @@ public class NeighbourDetailsActivity extends AppCompatActivity {
     @BindView(R.id.back_btn)
     public ImageButton mToolbarButton;
 
+    @BindView(R.id.neighbour_picture_img)
+    public ImageView mNeighbourAvatar;
+
     @BindView(R.id.Neighbout_name_txt)
     public TextView mToolbarTextView;
 
-    @BindView(R.id. infos_card_name_txt)
+    @BindView(R.id.infos_card_name_txt)
     public TextView mInfosCardName;
 
     @BindView(R.id.add_favorite_button_btn)
     public android.support.design.widget.FloatingActionButton mFavFab;
 
+    @BindDrawable(R.drawable.ic_star_border_white_24dp)
+    public Drawable mStarBorderWhite;
 
+    @BindDrawable(R.drawable.ic_star_yellow_24dp)
+    public Drawable mStarYellow;
 
+    private NeighbourApiService mApiService;
     private Neighbour mNeighbour;
 
     @Override
@@ -47,17 +54,40 @@ public class NeighbourDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_neighbour_details);
         ButterKnife.bind(this);
-        mNeighbour=getIntent().getParcelableExtra("neighbour");
 
-//        setSupportActionBar(mToolbar);
+        mApiService = DI.getNeighbourApiService();
+        getNeighbour();
+        fillNeighbourInfo();
+        FavoriteFAB();
+    }
+
+    private void getNeighbour() {
+        mNeighbour = getIntent().getParcelableExtra("neighbour");
+    }
 
 
-// **********Fill UI with detail neighbour info **********
+// ********** Fill UI with detail neighbour info **********
 
-//        using API service ???
-
-
+    private void fillNeighbourInfo() {
+        Glide.with(this).load(mNeighbour.getAvatarUrl()).into(mNeighbourAvatar);
         mToolbarTextView.setText(mNeighbour.getName());
+        mInfosCardName.setText(mNeighbour.getName());
+        mToolbarButton.setOnClickListener(v -> finish());
+    }
 
+    // ********** Activate Favorite FAB toggling and update favorite value through API **********
+
+    private void FavoriteFAB() {
+        if (mNeighbour.isFavorite() == true) {
+            mFavFab.setImageDrawable(mStarYellow);
+        } else {
+            mFavFab.setImageDrawable(mStarBorderWhite);
+        }
+
+            mFavFab.setOnClickListener(v -> {
+                mApiService.toggleFavorite(mNeighbour);
+                mNeighbour.setFavorite(!mNeighbour.isFavorite());
+            FavoriteFAB();
+            });
     }
 }
