@@ -126,6 +126,8 @@ public void setFavorite(boolean favorite) {
         id = in.readInt();
         name = in.readString();
         isFavorite = in.readByte() != 0;
+        avatarUrl = in.readString();
+
     }
     @Override
     public int describeContents() {
@@ -137,5 +139,6 @@ public void setFavorite(boolean favorite) {
         parcel.writeInt(id);
         parcel.writeString(name);
         parcel.writeByte((byte) (isFavorite ? 1 : 0));
+        parcel.writeString(avatarUrl);
     }
 }

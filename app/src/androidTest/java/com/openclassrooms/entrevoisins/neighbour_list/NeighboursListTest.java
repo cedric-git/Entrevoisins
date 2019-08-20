@@ -57,7 +57,8 @@ public class NeighboursListTest {
     public void myNeighboursList_shouldNotBeEmpty() { // return a android.support.test.espresso.AmbiguousViewMatcherException
         // First scroll to the position that needs to be matched and click on it.
 //        onView(ViewMatchers.withId(R.id.list_neighbours))
-        onView(Matchers.allOf(withId(R.id.list_neighbours), isDisplayed())).check(matches(hasMinimumChildCount(1)));
+        onView(Matchers.allOf(withId(R.id.list_neighbours), isDisplayed()))
+                .check(matches(hasMinimumChildCount(1)));
     }
 
     /**
@@ -65,15 +66,21 @@ public class NeighboursListTest {
      */
     @Test
     public void myNeighboursList_deleteAction_shouldRemoveItem() {// return a android.support.test.espresso.AmbiguousViewMatcherException
-        // Given : We remove the element at position 2
-//        onView(ViewMatchers.withId(R.id.list_neighbours)).check(withItemCount(ITEMS_COUNT));
 
         // When perform a click on a delete icon
-        onView(Matchers.allOf(withId(R.id.list_neighbours), isDisplayed())).check(withItemCount(ITEMS_COUNT)).perform(actionOnItemAtPosition(2, new DeleteViewAction()));
 
-//        onView(ViewMatchers.withId(R.id.list_neighbours))
+                // onView(ViewMatchers.withId(R.id.list_neighbours))
+        onView(Matchers.allOf(withId(R.id.list_neighbours), isDisplayed()))
+                .check(withItemCount(ITEMS_COUNT))
+                // Given : We remove the element at position 2
 //                .perform(RecyclerViewActions.actionOnItemAtPosition(1, new DeleteViewAction()));
+                .perform(actionOnItemAtPosition(2, new DeleteViewAction()));
+
+        //        onView(ViewMatchers.withId(R.id.list_neighbours))
+        onView(Matchers.allOf(withId(R.id.list_neighbours), isDisplayed()))
+                .check(withItemCount(ITEMS_COUNT-1));
+
         // Then : the number of element is 11
-        onView(Matchers.allOf(withId(R.id.list_neighbours), isDisplayed())).check(withItemCount(ITEMS_COUNT-1));
+
     }
 }
