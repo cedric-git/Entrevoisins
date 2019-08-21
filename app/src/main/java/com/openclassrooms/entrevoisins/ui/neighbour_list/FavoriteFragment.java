@@ -65,6 +65,7 @@ public class FavoriteFragment extends Fragment {
 
     private void initList() {
 
+        mFavorites = mApiService.getFavorites();
         mNeighbours = mApiService.getNeighbours();
 
             List<Neighbour> mFavorites = new ArrayList<>();

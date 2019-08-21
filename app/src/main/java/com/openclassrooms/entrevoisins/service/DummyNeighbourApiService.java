@@ -19,6 +19,11 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
         return neighbours;
     }
 
+    @Override
+    public List<Neighbour> getFavorites() {
+        return neighbours;
+    }
+
     /**
      * {@inheritDoc}
      */
@@ -33,6 +38,8 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
             neighbours.get(neighbours.indexOf(neighbour)).setFavorite(true);
         else neighbours.get(neighbours.indexOf(neighbour)).setFavorite(false);
     }
+
+
 
 
 }

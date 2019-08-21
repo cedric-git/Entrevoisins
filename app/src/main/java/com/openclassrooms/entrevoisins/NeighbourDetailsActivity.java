@@ -30,7 +30,7 @@ public class NeighbourDetailsActivity extends AppCompatActivity {
     @BindView(R.id.neighbour_picture_img)
     public ImageView mNeighbourAvatar;
 
-    @BindView(R.id.Neighbout_name_txt)
+    @BindView(R.id.Neighbour_name_txt)
     public TextView mToolbarTextView;
 
     @BindView(R.id.infos_card_name_txt)
@@ -40,7 +40,7 @@ public class NeighbourDetailsActivity extends AppCompatActivity {
     public android.support.design.widget.FloatingActionButton mFavFab;
 
     @BindDrawable(R.drawable.ic_star_border_white_24dp)
-    public Drawable mStarBorderWhite;
+    public Drawable mStarWhiteOutlined;
 
     @BindDrawable(R.drawable.ic_star_yellow_24dp)
     public Drawable mStarYellow;
@@ -82,7 +82,7 @@ public class NeighbourDetailsActivity extends AppCompatActivity {
         if (mNeighbour.isFavorite() == true) {
             mFavFab.setImageDrawable(mStarYellow);
         } else {
-            mFavFab.setImageDrawable(mStarBorderWhite);
+            mFavFab.setImageDrawable(mStarWhiteOutlined);
         }
 
             mFavFab.setOnClickListener(v -> {

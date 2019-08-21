@@ -16,7 +16,7 @@ public interface NeighbourApiService {
      */
     List<Neighbour> getNeighbours();
 
-//    List<Neighbour> getFavorites();
+    List<Neighbour> getFavorites();
 
 
     /**
