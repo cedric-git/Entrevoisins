@@ -13,8 +13,8 @@
         app:contentInsetStart="0dp"
         android:layout_width="match_parent"
         android:layout_height="241dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
@@ -30,16 +30,7 @@
             android:background="#EEFFFFFF">
 
 
-            <ImageButton
-                android:id="@+id/back_btn"
-                android:layout_width="52dp"
-                android:layout_height="45dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="13dp"
-                android:layout_marginTop="8dp"
-                android:background="#00FFFFFF"
-                app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
+
 
             <ImageView
                 android:id="@+id/neighbour_picture_img"
@@ -47,8 +38,8 @@
                 android:layout_height="match_parent"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="22dp"
-                android:layout_marginTop="19dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/ic_supervisor_account_black_24dp" />
 
@@ -58,11 +49,24 @@
                 android:layout_height="35dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="17dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="200dp"
                 android:text="Caroline"
                 android:textColor="@android:color/background_light"
                 android:textSize="30sp" />
+
+            <ImageButton
+                android:id="@+id/back_btn"
+                android:layout_width="52dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:background="#00FFFFFF"
+                app:srcCompat="@drawable/ic_arrow_back_black_24dp"
+                tools:visibility="visible" />
+
 
         </RelativeLayout>
 
@@ -100,95 +104,85 @@
             android:layout_height="match_parent">
 
 
-            <TextView
-                android:id="@+id/website_text"
-                android:layout_width="219dp"
-                android:layout_height="41dp"
-                android:layout_below="@+id/phone.txt"
+            <ImageView
+                android:id="@+id/address_img"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/infos_card_name_txt"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="93dp"
-                android:layout_marginTop="14dp"
-                android:text="www.facebook.fr/caroline"
-                android:textSize="18sp" />
-            <!--app:layout_constraintStart_toEndOf="@+id/imageView"-->
-            app:layout_constraintTop_toTopOf="parent" />
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="60dp"
+                app:srcCompat="@drawable/ic_location_on_black_24dp" />
 
-            <!--android:layout_marginStart="24dp"-->
-            android:layout_marginTop="124dp"
-            android:text="+33 6 86 57 90 14"
-            android:textSize="18sp"
-            <!--app:layout_constraintStart_toEndOf="@+id/imageView3"--><![CDATA[
-            app:layout_constraintTop_toTopOf="parent" />
 
-            ]]>
-
-            <TextView
-                android:id="@+id/phone.txt"
-                android:layout_width="219dp"
-                android:layout_height="41dp"
-                android:layout_below="@+id/address_txt"
+            <ImageView
+                android:id="@+id/location_img"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:layout_below="@+id/location_img2"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="92dp"
-                android:layout_marginTop="29dp"
-                android:layout_toEndOf="@+id/phone_img"
-                android:text="+33 6 86 57 90 14"
-                android:textSize="18sp"
-                app:layout_constraintStart_toEndOf="@+id/phone_img"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="20dp"
+                app:srcCompat="@drawable/ic_website_24dp" />
 
-            <TextView
-                android:id="@+id/address_txt"
-                android:layout_width="252dp"
-                android:layout_height="39dp"
-                android:layout_marginStart="27dp"
-                android:layout_marginTop="64dp"
-                android:layout_toEndOf="@+id/address_img"
-                android:text="Saint Pierre st mont a 5km"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/location_img2"
+                android:layout_width="40dp"
+                android:layout_height="38dp"
+                android:layout_below="@+id/address_img"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                app:srcCompat="@drawable/ic_phone_black_24dp" />
+
 
             <TextView
                 android:id="@+id/infos_card_name_txt"
                 android:layout_width="144dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Caroline"
-                android:textColor="@android:color/black"
-                android:textSize="24sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/address_img"
-                android:layout_width="44dp"
-                android:layout_height="41dp"
-                android:layout_below="@+id/infos_card_name_txt"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="64dp"
-                app:srcCompat="@drawable/ic_location_on_black_24dp" />
-
-            <ImageView
-                android:id="@+id/location_img"
-                android:layout_width="44dp"
-                android:layout_height="41dp"
-                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="184dp"
-                app:srcCompat="@drawable/ic_website_24dp" />
+                android:layout_marginTop="15dp"
+                android:text="Caroline"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
 
-            <ImageView
-                android:id="@+id/phone_img"
-                android:layout_width="44dp"
+            <TextView
+                android:id="@+id/website_text"
+                android:layout_width="219dp"
                 android:layout_height="41dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="21dp"
-                android:layout_marginTop="124dp"
-                app:srcCompat="@drawable/ic_phone_black_24dp" />
+                android:layout_below="@+id/phone.txt"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_toEndOf="@+id/location_img"
+                android:text="www.facebook.fr/caroline"
+                android:textSize="18sp" />
+
+
+            <TextView
+                android:id="@+id/phone.txt"
+                android:layout_width="193dp"
+                android:layout_height="38dp"
+                android:layout_below="@+id/address_txt"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_toEndOf="@+id/location_img2"
+                android:text="+33 6 86 57 90 14"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/address_txt"
+                android:layout_width="252dp"
+                android:layout_height="39dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="64dp"
+                android:layout_toEndOf="@+id/address_img"
+                android:text="Saint Pierre st mont a 5km"
+                android:textSize="18sp"
+                app:layout_constraintTop_toTopOf="parent" />
         </RelativeLayout>
 
 
@@ -197,8 +191,8 @@
 
     <android.support.v7.widget.CardView
         android:id="@+id/activity_neighbour_details_about"
-        android:layout_width="386dp"
-        android:layout_height="193dp"
+        android:layout_width="384dp"
+        android:layout_height="150dp"
         android:layout_marginStart="14dp"
         android:layout_marginTop="8dp"
         android:minHeight="@dimen/height_min_little_card"
@@ -207,15 +201,18 @@
 
         <RelativeLayout
             android:id="@+id/RelativeLayout_about"
-            android:layout_width="375dp"
-            android:layout_height="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="114dp"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/about_tittle_txt"
-                android:layout_width="222dp"
-                android:layout_height="43dp"
+                android:layout_width="224dp"
+                android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="23dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
                 android:text="A propos de moi"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
@@ -224,12 +221,12 @@
 
             <TextView
                 android:id="@+id/about_content_txt"
-                android:layout_width="249dp"
-                android:layout_height="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
                 android:layout_alignStart="@+id/about_tittle_txt"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="-5dp"
-                android:layout_marginTop="53dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="67dp"
                 android:text="Bonjour, Ma vie, mon oeuvre ..."
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
