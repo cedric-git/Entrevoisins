@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.openclassrooms.entrevoisins.R;
-import com.openclassrooms.entrevoisins.di.DI;
-import com.openclassrooms.entrevoisins.events.DeleteNeighbourEvent;
+import com.openclassrooms.entrevoisins.di.DI_x_;
+import com.openclassrooms.entrevoisins.events.DeleteNeighbourEvent_x_;
 import com.openclassrooms.entrevoisins.model.Neighbour;
 import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 
@@ -22,19 +22,17 @@ import org.greenrobot.eventbus.Subscribe;
 import java.util.ArrayList;
 import java.util.List;
 
-//Formater le xml
+
 
 public class FavoriteFragment extends Fragment {
 
     private NeighbourApiService mApiService;
     private List<Neighbour> mNeighbours;
-    private List<Neighbour> mFavorites;
     private RecyclerView mRecyclerView;
-
 
     /**
      * Create and return a new instance
-     * @return @{@link NeighbourFragment}
+     * @return @{@link FavoriteFragment}
      */
     public static FavoriteFragment newInstance() {
         FavoriteFragment fragment = new FavoriteFragment();
@@ -44,13 +42,12 @@ public class FavoriteFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mApiService = DI.getNeighbourApiService();
+        mApiService = DI_x_.getNeighbourApiService();
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_neighbour_list, container, false); //substituer fragment_neighbour_list ?
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_neighbour_list, container, false);
         Context context = view.getContext();
         mRecyclerView = (RecyclerView) view;
         mRecyclerView.setLayoutManager(new LinearLayoutManager(context));
@@ -65,12 +62,11 @@ public class FavoriteFragment extends Fragment {
 
     private void initList() {
 
-        mFavorites = mApiService.getFavorites();
         mNeighbours = mApiService.getNeighbours();
 
             List<Neighbour> mFavorites = new ArrayList<>();
             for (Neighbour n : mNeighbours) {
-                if (n.isFavorite())
+                if (n.getFavoriteStatus())
                     mFavorites.add(n);
             }
 
@@ -95,7 +91,7 @@ public class FavoriteFragment extends Fragment {
      * @param event
      */
     @Subscribe
-    public void onDeleteNeighbour(DeleteNeighbourEvent event) {
+    public void onDeleteNeighbour(DeleteNeighbourEvent_x_ event) {
         mApiService.deleteNeighbour(event.neighbour);
         initList();
     }

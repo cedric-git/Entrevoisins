@@ -14,9 +14,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.openclassrooms.entrevoisins.NeighbourDetailsActivity;
 import com.openclassrooms.entrevoisins.R;
-import com.openclassrooms.entrevoisins.events.DeleteNeighbourEvent;
+import com.openclassrooms.entrevoisins.events.DeleteNeighbourEvent_x_;
 import com.openclassrooms.entrevoisins.model.Neighbour;
-import com.openclassrooms.entrevoisins.NeighbourDetailsActivity;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -44,6 +43,9 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
     public void onBindViewHolder(final ViewHolder holder, int position) {
         Neighbour neighbour = mNeighbours.get(position);
         holder.mNeighbourName.setText(neighbour.getName());
+
+
+
         Glide.with(holder.mNeighbourAvatar.getContext())
                 .load(neighbour.getAvatarUrl())
                 .apply(RequestOptions.circleCropTransform())
@@ -52,9 +54,12 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
         holder.mDeleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EventBus.getDefault().post(new DeleteNeighbourEvent(neighbour));
+                EventBus.getDefault().post(new DeleteNeighbourEvent_x_(neighbour));
             }
         });
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<added
+
+// open detail page of clicked neighbour
 
         holder.mNeighbourLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,9 +67,9 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
                 Intent toDetail = new Intent(holder.mNeighbourName.getContext(), NeighbourDetailsActivity.class);
                 toDetail.putExtra("neighbour", neighbour);
                 v.getContext().startActivity(toDetail);
-
             }
         });
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<added
     }
 
     @Override
@@ -73,12 +78,16 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+
         @BindView(R.id.fragment_neighbour_layout)
         public ConstraintLayout mNeighbourLayout;
+
         @BindView(R.id.item_list_avatar)
         public ImageView mNeighbourAvatar;
-        @BindView(R.id.item_list_name)
+
+        @BindView(R.id.item_list_name)// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<binded
         public TextView mNeighbourName;
+
         @BindView(R.id.item_list_delete_button)
         public ImageButton mDeleteButton;
 

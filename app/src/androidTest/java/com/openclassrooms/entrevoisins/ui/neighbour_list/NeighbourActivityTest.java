@@ -6,7 +6,7 @@ import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.openclassrooms.entrevoisins.R;
-import com.openclassrooms.entrevoisins.di.DI;
+import com.openclassrooms.entrevoisins.di.DI_x_;
 import com.openclassrooms.entrevoisins.model.Neighbour;
 import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 
@@ -27,30 +27,30 @@ import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withContentDescription;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
-import static com.openclassrooms.entrevoisins.ui.neighbour_list.ListNeighbourActivityTestCEDDDDDD.childAtPosition;
+import static com.openclassrooms.entrevoisins.ui.neighbour_list.ListNeighbourActivityNO_XXX.childAtPosition;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.Assert.assertEquals;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class NeighbourActivityTestCED {
+public class NeighbourActivityTest {
     private static int neighbourIndex = 2;
     private NeighbourApiService mService;
     private List<Neighbour> instantTestList;
 
     @Rule
-    public ActivityTestRule<ListNeighbourActivity> mActivityTestRule = new ActivityTestRule<>(ListNeighbourActivity.class);
+    public ActivityTestRule<ListNeighbourActivity_x_> mActivityTestRule = new ActivityTestRule<>(ListNeighbourActivity_x_.class);
 
     @Before
     public void linkToAPI() {
-        mService = DI.getNewInstanceApiService();
+        mService = DI_x_.getNewInstanceApiService();
 //    }
 //
 //    public void instantTestList () {
         instantTestList = new ArrayList<>();
         for (Neighbour n : mService.getNeighbours()) {
-            if (n.isFavorite())
+            if (n.getFavoriteStatus())
                 instantTestList.add(n);
         }
     }

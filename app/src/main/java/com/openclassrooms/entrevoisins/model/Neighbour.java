@@ -32,7 +32,7 @@ public class Neighbour implements Parcelable {
     private String aboutMe;
 
     /** Favorite or not */
-    private boolean isFavorite;
+    private boolean favoriteStatus;// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Added
 
     /**
      * Constructor
@@ -43,9 +43,9 @@ public class Neighbour implements Parcelable {
      * @param phone
      * @param webSite
      * @param aboutMe
-     * @param isFavorite
+     * @param FavoriteStatus // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Added
      */
-    public Neighbour(Integer id, String name, String avatarUrl, String address, String phone, String webSite, String aboutMe, boolean isFavorite) {
+    public Neighbour(Integer id, String name, String avatarUrl, String address, String phone, String webSite, String aboutMe, boolean FavoriteStatus) {
         this.id = id;
         this.name = name;
         this.avatarUrl = avatarUrl;
@@ -53,21 +53,19 @@ public class Neighbour implements Parcelable {
         this.phone = phone;
         this.webSite = webSite;
         this.aboutMe = aboutMe;
-        this.isFavorite = isFavorite;
+        // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Added
+        this.favoriteStatus = FavoriteStatus;
+        // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Added
     }
 
     public Integer getId() {
         return id;
     }
-
     public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
+    public String getName() { return name; }
     public void setName(String name) {
         this.name = name;
     }
@@ -75,29 +73,22 @@ public class Neighbour implements Parcelable {
     public String getAvatarUrl() {
         return avatarUrl;
     }
-
     public void setAvatarUrl(String avatarUrl) {
         this.avatarUrl = avatarUrl;
     }
 
     public String getAddress() { return address; }
-
     public String getPhone() { return phone;}
 
     public String getMail() { return webSite; }
-
     public String getDescription() { return aboutMe; }
 
-    public boolean isFavorite() { return isFavorite; }
+    // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Added
+    public boolean getFavoriteStatus() { return favoriteStatus; }
+    public void setFavoriteStatus(boolean favoriteStatus) { this.favoriteStatus = favoriteStatus; }
+    // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Added
 
-//    public void setFavorite(boolean favorite) {
-//        isFavorite = favorite;
-//    }
-public void setFavorite(boolean favorite) {
-    this.isFavorite = favorite;
-}
 
-    //-----------------------------a completer ----------------------------------------//
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -106,17 +97,19 @@ public void setFavorite(boolean favorite) {
         return Objects.equals(id, neighbour.id);
     }
 
+    // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Added
+
+    // Parcel data
+
     @Override
     public int hashCode() {
         return Objects.hash(id);
     }
 
-
     public static final Parcelable.Creator<Neighbour> CREATOR = new Parcelable.Creator<Neighbour>() {
         public Neighbour createFromParcel(Parcel in) {
             return new Neighbour(in);
         }
-
         public Neighbour[] newArray(int size) {
             return new Neighbour[size];
         }
@@ -125,8 +118,9 @@ public void setFavorite(boolean favorite) {
     private Neighbour(Parcel in) {
         id = in.readInt();
         name = in.readString();
-        isFavorite = in.readByte() != 0;
+        favoriteStatus = in.readByte() != 0;
         avatarUrl = in.readString();
+        webSite = in.readString();
 
     }
     @Override
@@ -138,7 +132,10 @@ public void setFavorite(boolean favorite) {
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeInt(id);
         parcel.writeString(name);
-        parcel.writeByte((byte) (isFavorite ? 1 : 0));
+        parcel.writeByte((byte) (favoriteStatus ? 1 : 0));
         parcel.writeString(avatarUrl);
+        parcel.writeString(webSite);
     }
+    // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Added
+
 }

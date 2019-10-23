@@ -28,10 +28,10 @@ import static org.hamcrest.Matchers.allOf;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class ListNeighbourActivityTestCEDDDDDD {
+public class ListNeighbourActivityNO_XXX {
 
     @Rule
-    public ActivityTestRule<ListNeighbourActivity> mActivityTestRule = new ActivityTestRule<>(ListNeighbourActivity.class);
+    public ActivityTestRule<ListNeighbourActivity_x_> mActivityTestRule = new ActivityTestRule<>(ListNeighbourActivity_x_.class);
 
     @Test
     public void listNeighbourActivityTestCEDDDDDD() {

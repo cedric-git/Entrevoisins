@@ -6,13 +6,10 @@ import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-
 import com.bumptech.glide.Glide;
-import com.openclassrooms.entrevoisins.di.DI;
+import com.openclassrooms.entrevoisins.di.DI_x_;
 import com.openclassrooms.entrevoisins.model.Neighbour;
 import com.openclassrooms.entrevoisins.service.NeighbourApiService;
-
 import butterknife.BindDrawable;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -36,6 +33,9 @@ public class NeighbourDetailsActivity extends AppCompatActivity {
     @BindView(R.id.infos_card_name_txt)
     public TextView mInfosCardName;
 
+    @BindView(R.id.website_text)
+    public TextView mWebsite_text;
+
     @BindView(R.id.add_favorite_button_btn)
     public android.support.design.widget.FloatingActionButton mFavFab;
 
@@ -56,7 +56,7 @@ public class NeighbourDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_neighbour_details);
         ButterKnife.bind(this);
 
-        mApiService = DI.getNeighbourApiService();
+        mApiService = DI_x_.getNeighbourApiService();
         getNeighbour();
         fillNeighbourInfo();
         FavoriteFAB();
@@ -70,24 +70,28 @@ public class NeighbourDetailsActivity extends AppCompatActivity {
 // ********** Fill UI with detail neighbour info **********
 
     private void fillNeighbourInfo() {
-        Glide.with(this).load(mNeighbour.getAvatarUrl()).into(mNeighbourAvatar);
-        mToolbarTextView.setText(mNeighbour.getName());
+        Glide.with(this).load(mNeighbour.getAvatarUrl()).into(mNeighbourAvatar); // neighbour avatar
+        mToolbarTextView.setText(mNeighbour.getName()); // neighbour name
+        mWebsite_text.setText(mNeighbour.getMail());
+        //  ...
+        //  ... etc
+        //  ...
         mInfosCardName.setText(mNeighbour.getName());
         mToolbarButton.setOnClickListener(v -> finish());
     }
 
     // ********** Activate Favorite FAB toggling and update favorite value through API **********
 
+    // set FAB color regarding ON/OFF
     private void FavoriteFAB() {
-        if (mNeighbour.isFavorite() == true) {
+        if (mNeighbour.getFavoriteStatus() == true) {
             mFavFab.setImageDrawable(mStarYellow);
-        } else {
-            mFavFab.setImageDrawable(mStarWhiteOutlined);
-        }
+        } else { mFavFab.setImageDrawable(mStarWhiteOutlined); }
 
+    // Record Favorite status
             mFavFab.setOnClickListener(v -> {
                 mApiService.toggleFavorite(mNeighbour);
-                mNeighbour.setFavorite(!mNeighbour.isFavorite());
+                mNeighbour.setFavoriteStatus(!mNeighbour.getFavoriteStatus());
             FavoriteFAB();
             });
     }

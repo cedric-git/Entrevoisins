@@ -1,6 +1,6 @@
 package com.openclassrooms.entrevoisins.service;
 
-import com.openclassrooms.entrevoisins.di.DI;
+import com.openclassrooms.entrevoisins.di.DI_x_;
 import com.openclassrooms.entrevoisins.model.Neighbour;
 
 import org.hamcrest.collection.IsIterableContainingInAnyOrder;
@@ -19,13 +19,13 @@ import static org.junit.Assert.assertTrue;
  * Unit test on Neighbour service
  */
 @RunWith(JUnit4.class)
-public class NeighbourServiceTest {
+public class NeighbourServiceTest______ {
 
     private NeighbourApiService service;
 
     @Before
     public void setup() {
-        service = DI.getNewInstanceApiService();
+        service = DI_x_.getNewInstanceApiService();
     }
 
     @Test
@@ -45,11 +45,11 @@ public class NeighbourServiceTest {
     @Test
     public void toggleFavoriteWithSuccess() {
         Neighbour neighbour = service.getNeighbours().get(0);
-        assertFalse(service.getNeighbours().get(0).isFavorite());
+        assertFalse(service.getNeighbours().get(0).getFavoriteStatus());
         service.toggleFavorite(neighbour);
-        assertTrue(service.getNeighbours().get(0).isFavorite());
+        assertTrue(service.getNeighbours().get(0).getFavoriteStatus());
         service.toggleFavorite(neighbour);
-        assertFalse(service.getNeighbours().get(0).isFavorite());
+        assertFalse(service.getNeighbours().get(0).getFavoriteStatus());
     }
 
 }

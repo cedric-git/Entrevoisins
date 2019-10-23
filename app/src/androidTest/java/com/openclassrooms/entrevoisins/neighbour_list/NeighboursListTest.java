@@ -1,13 +1,11 @@
 
 package com.openclassrooms.entrevoisins.neighbour_list;
 
-import android.support.test.espresso.contrib.RecyclerViewActions;
-import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.openclassrooms.entrevoisins.R;
-import com.openclassrooms.entrevoisins.ui.neighbour_list.ListNeighbourActivity;
+import com.openclassrooms.entrevoisins.ui.neighbour_list.ListNeighbourActivity_x_;
 import com.openclassrooms.entrevoisins.utils.DeleteViewAction;
 
 import org.hamcrest.Matchers;
@@ -27,8 +25,6 @@ import static com.openclassrooms.entrevoisins.utils.RecyclerViewItemCountAsserti
 import static org.hamcrest.core.AllOf.allOf;
 import static org.hamcrest.core.IsNull.notNullValue;
 
-
-
 /**
  * Test class for list of neighbours
  */
@@ -38,11 +34,11 @@ public class NeighboursListTest {
     // This is fixed
     private static int ITEMS_COUNT = 12;
 
-    private ListNeighbourActivity mActivity;
+    private ListNeighbourActivity_x_ mActivity;
 
     @Rule
-    public ActivityTestRule<ListNeighbourActivity> mActivityRule =
-            new ActivityTestRule(ListNeighbourActivity.class);
+    public ActivityTestRule<ListNeighbourActivity_x_> mActivityRule =
+            new ActivityTestRule(ListNeighbourActivity_x_.class);
 
     @Before
     public void setUp() {
@@ -51,7 +47,7 @@ public class NeighboursListTest {
     }
 
     /**
-     * We ensure that our recyclerview is displaying at least on item
+     * We ensure that our recyclerview is displaying at least one item
      */
     @Test
     public void myNeighboursList_shouldNotBeEmpty() { // return a android.support.test.espresso.AmbiguousViewMatcherException

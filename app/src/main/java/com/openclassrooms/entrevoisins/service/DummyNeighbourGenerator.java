@@ -8,19 +8,21 @@ import java.util.List;
 
 public abstract class DummyNeighbourGenerator {
 
+    // <<<<<<<<<<<<<<< add FavoriteStatus parameter
+
     public static List<Neighbour> DUMMY_NEIGHBOURS = Arrays.asList(
             new Neighbour(1, "Caroline", "http://i.pravatar.cc/150?u=a042581f4e29026704d", "15 rue du Paradis", "06.12.65.95.32", "www.facebook.com/caroline", "mes hobbies sont : ....", false),
-            new Neighbour(2, "Jack", "http://i.pravatar.cc/150?u=a042581f4e29026704e", "15 rue du Paradis", "06.12.65.95.32", "jwww.facebook.com/caroline", "mes hobbies sont : ....", false),
-            new Neighbour(3, "Chloé", "http://i.pravatar.cc/150?u=a042581f4e29026704f", "15 rue du Paradis", "06.12.65.95.32", "www.facebook.com/caroline", "mes hobbies sont : ....", true),
-            new Neighbour(4, "Vincent", "http://i.pravatar.cc/150?u=a042581f4e29026704a", "15 rue du Paradis", "06.12.65.95.32", "www.facebook.com/caroline", "mes hobbies sont : ....", false),
-            new Neighbour(5, "Elodie", "http://i.pravatar.cc/150?u=a042581f4e29026704b", "15 rue du Paradis", "06.12.65.95.32", "www.facebook.com/caroline", "mes hobbies sont : ....", true),
-            new Neighbour(6, "Sylvain", "http://i.pravatar.cc/150?u=a042581f4e29026704c", "15 rue du Paradis", "06.12.65.95.32", "www.facebook.com/caroline", "mes hobbies sont : ....", true),
-            new Neighbour(7, "Laetitia", "http://i.pravatar.cc/150?u=a042581f4e29026703d", "15 rue du Paradis", "06.12.65.95.32", "www.facebook.com/caroline", "mes hobbies sont : ....", false),
-            new Neighbour(8, "Dan", "http://i.pravatar.cc/150?u=a042581f4e29026703b", "15 rue du Paradis", "06.12.65.95.32", "www.facebook.com/caroline", "mes hobbies sont : ....", false),
-            new Neighbour(9, "Joseph", "http://i.pravatar.cc/150?u=a042581f4e29026704d", "15 rue du Paradis", "06.12.65.95.32", "www.facebook.com/caroline", "mes hobbies sont : ....", true),
-            new Neighbour(10, "Emma", "http://i.pravatar.cc/150?u=a042581f4e29026706d", "15 rue du Paradis", "06.12.65.95.32", "www.facebook.com/caroline", "mes hobbies sont : ....", false),
-            new Neighbour(11, "Patrick", "http://i.pravatar.cc/150?u=a042581f4e29026702d", "15 rue du Paradis", "06.12.65.95.32", "www.facebook.com/caroline", "mes hobbies sont : ....", false),
-            new Neighbour(12, "Ludovic", "http://i.pravatar.cc/150?u=a042581f3e39026702d", "15 rue du Paradis", "06.12.65.95.32", "www.facebook.com/caroline", "mes hobbies sont : ....", false)
+            new Neighbour(2, "Jack", "http://i.pravatar.cc/150?u=a042581f4e29026704e", "15 rue du Paradis", "06.12.65.95.32", "jwww.facebook.com/jack", "mes hobbies sont : ....", false),
+            new Neighbour(3, "Chloé", "http://i.pravatar.cc/150?u=a042581f4e29026704f", "15 rue du Paradis", "06.12.65.95.32", "www.facebook.com/chloé", "mes hobbies sont : ....", true),
+            new Neighbour(4, "Vincent", "http://i.pravatar.cc/150?u=a042581f4e29026704a", "15 rue du Paradis", "06.12.65.95.32", "www.facebook.com/vincent", "mes hobbies sont : ....", false),
+            new Neighbour(5, "Elodie", "http://i.pravatar.cc/150?u=a042581f4e29026704b", "15 rue du Paradis", "06.12.65.95.32", "www.facebook.com/elodie", "mes hobbies sont : ....", true),
+            new Neighbour(6, "Sylvain", "http://i.pravatar.cc/150?u=a042581f4e29026704c", "15 rue du Paradis", "06.12.65.95.32", "www.facebook.com/sylvain", "mes hobbies sont : ....", true),
+            new Neighbour(7, "Laetitia", "http://i.pravatar.cc/150?u=a042581f4e29026703d", "15 rue du Paradis", "06.12.65.95.32", "www.facebook.com/laetitia", "mes hobbies sont : ....", false),
+            new Neighbour(8, "Dan", "http://i.pravatar.cc/150?u=a042581f4e29026703b", "15 rue du Paradis", "06.12.65.95.32", "www.facebook.com/dan", "mes hobbies sont : ....", false),
+            new Neighbour(9, "Joseph", "http://i.pravatar.cc/150?u=a042581f4e29026704d", "15 rue du Paradis", "06.12.65.95.32", "www.facebook.com/joseph", "mes hobbies sont : ....", true),
+            new Neighbour(10, "Emma", "http://i.pravatar.cc/150?u=a042581f4e29026706d", "15 rue du Paradis", "06.12.65.95.32", "www.facebook.com/emma", "mes hobbies sont : ....", false),
+            new Neighbour(11, "Patrick", "http://i.pravatar.cc/150?u=a042581f4e29026702d", "15 rue du Paradis", "06.12.65.95.32", "www.facebook.com/patrick", "mes hobbies sont : ....", false),
+            new Neighbour(12, "Ludovic", "http://i.pravatar.cc/150?u=a042581f3e39026702d", "15 rue du Paradis", "06.12.65.95.32", "www.facebook.com/ludovic", "mes hobbies sont : ....", false)
     );
 
     static List<Neighbour> generateNeighbours() {
