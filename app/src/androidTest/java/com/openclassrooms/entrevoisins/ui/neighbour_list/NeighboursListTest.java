@@ -1,5 +1,5 @@
 
-package com.openclassrooms.entrevoisins.neighbour_list;
+package com.openclassrooms.entrevoisins.ui.neighbour_list;
 
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
@@ -52,7 +52,6 @@ public class NeighboursListTest {
     @Test
     public void myNeighboursList_shouldNotBeEmpty() { // return a android.support.test.espresso.AmbiguousViewMatcherException
         // First scroll to the position that needs to be matched and click on it.
-//        onView(ViewMatchers.withId(R.id.list_neighbours))
         onView(Matchers.allOf(withId(R.id.list_neighbours), isDisplayed()))
                 .check(matches(hasMinimumChildCount(1)));
     }
@@ -69,7 +68,6 @@ public class NeighboursListTest {
         onView(Matchers.allOf(withId(R.id.list_neighbours), isDisplayed()))
                 .check(withItemCount(ITEMS_COUNT))
                 // Given : We remove the element at position 2
-//                .perform(RecyclerViewActions.actionOnItemAtPosition(1, new DeleteViewAction()));
                 .perform(actionOnItemAtPosition(2, new DeleteViewAction()));
 
         //        onView(ViewMatchers.withId(R.id.list_neighbours))

@@ -1,4 +1,4 @@
-package com.openclassrooms.entrevoisins.ui.neighbour_list;
+package com.openclassrooms.entrevoisins.utils;
 
 
 import android.support.test.espresso.ViewInteraction;
@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 
 import com.openclassrooms.entrevoisins.R;
+import com.openclassrooms.entrevoisins.ui.neighbour_list.ListNeighbourActivity_x_;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
@@ -34,9 +35,9 @@ public class ListNeighbourActivityNO_XXX {
     public ActivityTestRule<ListNeighbourActivity_x_> mActivityTestRule = new ActivityTestRule<>(ListNeighbourActivity_x_.class);
 
     @Test
-    public void listNeighbourActivityTestCEDDDDDD() {
+    public void listNeighbourActivityTest() {
         ViewInteraction tabView = onView(allOf(withContentDescription("Favorites"),
-                        childAtPosition(childAtPosition(withId(R.id.tabs), 0), 1), isDisplayed()));
+                childAtPosition(childAtPosition(withId(R.id.tabs), 0), 1), isDisplayed()));
         tabView.perform(click());
 
         ViewInteraction viewPager = onView(allOf(withId(R.id.container), childAtPosition(allOf(withId(R.id.main_content),

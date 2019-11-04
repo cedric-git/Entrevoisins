@@ -19,7 +19,7 @@ import static org.junit.Assert.assertTrue;
  * Unit test on Neighbour service
  */
 @RunWith(JUnit4.class)
-public class NeighbourServiceTest______ {
+public class NeighbourServiceTest {
 
     private NeighbourApiService service;
 
