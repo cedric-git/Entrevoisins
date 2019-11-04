@@ -9,18 +9,18 @@ import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
 import org.junit.Assert;
 
-public class RecyclerViewItemCountAssertion implements ViewAssertion {
+public class RecyclerViewItemCountAssertion_x_ implements ViewAssertion {
         private final Matcher<Integer> matcher;
 
-        public static RecyclerViewItemCountAssertion withItemCount(int expectedCount) {
+        public static RecyclerViewItemCountAssertion_x_ withItemCount(int expectedCount) {
             return withItemCount(Matchers.is(expectedCount));
         }
 
-        public static RecyclerViewItemCountAssertion withItemCount(Matcher<Integer> matcher) {
-            return new RecyclerViewItemCountAssertion(matcher);
+        public static RecyclerViewItemCountAssertion_x_ withItemCount(Matcher<Integer> matcher) {
+            return new RecyclerViewItemCountAssertion_x_(matcher);
         }
 
-        private RecyclerViewItemCountAssertion(Matcher<Integer> matcher) {
+        private RecyclerViewItemCountAssertion_x_(Matcher<Integer> matcher) {
             this.matcher = matcher;
         }
 

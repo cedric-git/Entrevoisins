@@ -6,7 +6,7 @@ import android.view.View;
 import com.openclassrooms.entrevoisins.R;
 import org.hamcrest.Matcher;
 
-public class DeleteViewAction implements ViewAction {
+public class DeleteViewAction_x_ implements ViewAction {
     @Override
     public Matcher<View> getConstraints() {
         return null;

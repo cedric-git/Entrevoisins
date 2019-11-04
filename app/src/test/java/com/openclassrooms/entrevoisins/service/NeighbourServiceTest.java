@@ -29,13 +29,15 @@ public class NeighbourServiceTest {
     }
 
     @Test
+    // Check if DUMMY_NEIGHBOURS is same that list created through API Service
     public void getNeighboursWithSuccess() {
-        List<Neighbour> neighbours = service.getNeighbours();
-        List<Neighbour> expectedNeighbours = DummyNeighbourGenerator.DUMMY_NEIGHBOURS;
-    assertThat(neighbours, IsIterableContainingInAnyOrder.containsInAnyOrder(expectedNeighbours.toArray()));
+        List<Neighbour> neighbours = service.getNeighbours();   //  <<< neighbour list through API Service
+        List<Neighbour> expectedNeighbours = DummyNeighbourGenerator.DUMMY_NEIGHBOURS;    //  <<< neighbours contained in DummyNeighbourGenerator
+    assertThat(neighbours, IsIterableContainingInAnyOrder.containsInAnyOrder(expectedNeighbours.toArray())); // <<< check if they are the same
 }
 
     @Test
+    // Check if a neighbour deleted do not belong anymore to neighbours' list
     public void deleteNeighbourWithSuccess() {
         Neighbour neighbourToDelete = service.getNeighbours().get(0);
         service.deleteNeighbour(neighbourToDelete);
@@ -44,12 +46,12 @@ public class NeighbourServiceTest {
 
     @Test
     public void toggleFavoriteWithSuccess() {
-        Neighbour neighbour = service.getNeighbours().get(0);
-        assertFalse(service.getNeighbours().get(0).getFavoriteStatus());
-        service.toggleFavorite(neighbour);
-        assertTrue(service.getNeighbours().get(0).getFavoriteStatus());
-        service.toggleFavorite(neighbour);
-        assertFalse(service.getNeighbours().get(0).getFavoriteStatus());
+        Neighbour neighbour = service.getNeighbours().get(0); // First neighbour Favorite Status is false
+        assertFalse(service.getNeighbours().get(0).getFavoriteStatus());    // Correct, it is false
+        service.toggleFavorite(neighbour);                                  // Change Favorite Status
+        assertTrue(service.getNeighbours().get(0).getFavoriteStatus());     // Correct, it is true
+        service.toggleFavorite(neighbour);                                  // Change Favorite Status
+        assertFalse(service.getNeighbours().get(0).getFavoriteStatus());    // Correct, it is false
     }
 
 }
