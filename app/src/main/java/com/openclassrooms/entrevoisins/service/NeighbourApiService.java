@@ -30,5 +30,5 @@ public interface NeighbourApiService {
      *
      * @param neighbour
      */
-    void toggleFavorite(Neighbour neighbour);
+    void toggleFavorite(Neighbour neighbour);   //  <<<<<<<<<<<<<added
 }

@@ -53,9 +53,9 @@ public class Neighbour implements Parcelable {
         this.phone = phone;
         this.webSite = webSite;
         this.aboutMe = aboutMe;
-        // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Added
-        this.favoriteStatus = FavoriteStatus;
-        // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Added
+
+        this.favoriteStatus = FavoriteStatus; // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Added
+
     }
 
     public Integer getId() {
@@ -86,7 +86,7 @@ public class Neighbour implements Parcelable {
     // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Added
     public boolean getFavoriteStatus() { return favoriteStatus; }
     public void setFavoriteStatus(boolean favoriteStatus) { this.favoriteStatus = favoriteStatus; }
-    // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Added
+    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Added
 
 
     @Override
@@ -136,6 +136,6 @@ public class Neighbour implements Parcelable {
         parcel.writeString(avatarUrl);
         parcel.writeString(webSite);
     }
-    // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Added
+    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Added
 
 }

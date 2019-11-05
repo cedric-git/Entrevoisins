@@ -72,12 +72,12 @@ public class NeighbourDetailsActivity extends AppCompatActivity {
     private void fillNeighbourInfo() {
         Glide.with(this).load(mNeighbour.getAvatarUrl()).into(mNeighbourAvatar); // neighbour avatar
         mToolbarTextView.setText(mNeighbour.getName()); // neighbour name
-        mWebsite_text.setText(mNeighbour.getMail());
+        mWebsite_text.setText(mNeighbour.getMail());  // neighbour website
         //  ...
         //  ... etc
         //  ...
         mInfosCardName.setText(mNeighbour.getName());
-        mToolbarButton.setOnClickListener(v -> finish());
+        mToolbarButton.setOnClickListener(v -> finish());   // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     }
 
     // ********** Activate Favorite FAB toggling and update favorite value through API **********

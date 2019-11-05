@@ -32,14 +32,15 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
         neighbours.remove(neighbour);
     }
 
+    // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Added
+
     @Override
-    public void toggleFavorite(Neighbour neighbour) {// <<<<<<<<<<<<<added
+    public void toggleFavorite(Neighbour neighbour) {
         if (neighbours.get(neighbours.indexOf(neighbour)).getFavoriteStatus()==false)
             neighbours.get(neighbours.indexOf(neighbour)).setFavoriteStatus(true);
         else neighbours.get(neighbours.indexOf(neighbour)).setFavoriteStatus(false);
     }
 
-
-
+    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Added
 
 }
