@@ -62,9 +62,11 @@ public class NeighbourActivityTest {
     // 2.  Neighbour name is displayed on his/her detail activity page
     @Test
     public void neighbour_details_activity_name_isDisplayed(){
+
 // click on second displayed neighbour on the list
         onView(allOf(withId(R.id.list_neighbours), isDisplayed()))
                 .perform(actionOnItemAtPosition(neighbourIndex, click()));
+
 //  check if neighbour flield matches with the second name stored in the list of neighbours
         onView(withId(R.id.Neighbour_name_txt))
                 .check(matches(withText(mService.getNeighbours().get(neighbourIndex).getName())));
@@ -73,8 +75,10 @@ public class NeighbourActivityTest {
     // 3. favorite tab should display favorite neighbour only
     @Test
     public void favoriteTab_displays_just_favorite_neighbours() {
+
 // click on the field "Favorites"
         onView(withContentDescription("Favorites")).perform(click());
+
 // for each neighbour name displayed in the list, check it matches with neighbour name of the instantList
         for (int i = 0; i < instantTestList.size(); i++) {
             onView(allOf(withId(R.id.item_list_name),

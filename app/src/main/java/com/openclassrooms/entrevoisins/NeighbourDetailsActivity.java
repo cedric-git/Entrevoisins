@@ -57,9 +57,9 @@ public class NeighbourDetailsActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         mApiService = DI_x_.getNeighbourApiService();
-        getNeighbour();
-        fillNeighbourInfo();
-        FavoriteFAB();
+        getNeighbour();         //  <<<<<<<<<<<<<<<
+        fillNeighbourInfo();    //  <<<<<<<<<<<<<<<
+        FavoriteFAB();          //  <<<<<<<<<<<<<<<
     }
 
     private void getNeighbour() {
@@ -69,7 +69,7 @@ public class NeighbourDetailsActivity extends AppCompatActivity {
 
 // ********** Fill UI with detail neighbour info **********
 
-    private void fillNeighbourInfo() {
+    private void fillNeighbourInfo() {  //  <<<<<<<<<<<<<<< get/set info
         Glide.with(this).load(mNeighbour.getAvatarUrl()).into(mNeighbourAvatar); // neighbour avatar
         mToolbarTextView.setText(mNeighbour.getName()); // neighbour name
         mWebsite_text.setText(mNeighbour.getMail());  // neighbour website
@@ -77,12 +77,13 @@ public class NeighbourDetailsActivity extends AppCompatActivity {
         //  ... etc
         //  ...
         mInfosCardName.setText(mNeighbour.getName());
-        mToolbarButton.setOnClickListener(v -> finish());   // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+        mToolbarButton.setOnClickListener(v -> finish());   // <<<<<<<<<<back button
     }
 
     // ********** Activate Favorite FAB toggling and update favorite value through API **********
 
-    // set FAB color regarding ON/OFF
+    // set FAB color regarding ON/OFF  //  <<<<<<<<<<<<<<<
     private void FavoriteFAB() {
         if (mNeighbour.getFavoriteStatus() == true) {
             mFavFab.setImageDrawable(mStarYellow);

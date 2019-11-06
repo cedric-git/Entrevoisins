@@ -24,7 +24,7 @@ import java.util.List;
 
 
 
-public class FavoriteFragment extends Fragment {
+public class FavoriteFragment extends Fragment {    //  <<<<<<<<<<<<<<<< FavoriteFragment created
 
     private NeighbourApiService mApiService;
     private List<Neighbour> mNeighbours;
@@ -34,9 +34,9 @@ public class FavoriteFragment extends Fragment {
      * Create and return a new instance
      * @return @{@link FavoriteFragment}
      */
-    public static FavoriteFragment newInstance() {
+    public static FavoriteFragment newInstance() {  //  <<<<<<<<<<<<<<<<<<<<
         FavoriteFragment fragment = new FavoriteFragment();
-        return fragment;
+        return fragment;    //  >>>>>>>>>>>>>>
     }
 
     @Override
@@ -66,8 +66,8 @@ public class FavoriteFragment extends Fragment {
 
             List<Neighbour> mFavorites = new ArrayList<>();
             for (Neighbour n : mNeighbours) {
-                if (n.getFavoriteStatus())
-                    mFavorites.add(n);
+                if (n.getFavoriteStatus())  //  <<<<<<<<<<<<<<<<<<<<
+                    mFavorites.add(n); //  <<<<<<<<<<<<<<<<<<<<
             }
 
         mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mFavorites));

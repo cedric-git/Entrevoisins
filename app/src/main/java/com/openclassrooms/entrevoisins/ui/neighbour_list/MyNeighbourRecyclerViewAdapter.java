@@ -65,7 +65,7 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
             @Override
             public void onClick(View v) {
                 Intent toDetail = new Intent(holder.mNeighbourName.getContext(), NeighbourDetailsActivity.class);
-                toDetail.putExtra("neighbour", neighbour);
+                toDetail.putExtra("neighbour", neighbour); // loading neighbour selected data
                 v.getContext().startActivity(toDetail);
             }
         });

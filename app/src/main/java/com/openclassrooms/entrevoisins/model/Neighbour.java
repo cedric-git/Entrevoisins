@@ -8,7 +8,7 @@ import java.util.Objects;
 /**
  * Model object representing a Neighbour
  */
-public class Neighbour implements Parcelable {
+public class Neighbour implements Parcelable {  // <<<<<<<<<<  implements Parcelable Added
 
     /** Identifier */
     private Integer id;
@@ -53,7 +53,6 @@ public class Neighbour implements Parcelable {
         this.phone = phone;
         this.webSite = webSite;
         this.aboutMe = aboutMe;
-
         this.favoriteStatus = FavoriteStatus; // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Added
 
     }
@@ -83,10 +82,10 @@ public class Neighbour implements Parcelable {
     public String getMail() { return webSite; }
     public String getDescription() { return aboutMe; }
 
-    // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Added
+    // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Added in setters/getters
     public boolean getFavoriteStatus() { return favoriteStatus; }
     public void setFavoriteStatus(boolean favoriteStatus) { this.favoriteStatus = favoriteStatus; }
-    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Added
+    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
     @Override
